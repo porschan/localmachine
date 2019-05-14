@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>filePage</title>
+    <style>
+        td{
+            border:2px black solid;
+            padding:10px;
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+<h1 th:text="${message}" />
+
+<form method="post" action="../file/upload" enctype="multipart/form-data">
+    <input type="file" name="file"><br>
+    <input type="submit" value="提交">
+</form>
+
+<br>
+
+<table id="fileArea">
+    <tr><td>file</td></tr>
+</table>
+
+<script>
+    $(function (){
+        gainData();
+    });
+
+    function gainData(){
+        $.ajax({
+            type: 'GET',
+            url: "../file/files",
+            success: function(data){
+                var html = "<tr><td>file</td></tr>";
+                if(data.files != null && data.files.length > 0)
+                    for(var i=0;i<data.files.length;i++){{
+                        html += "<tr><td>" + data.files[i] + "</td></tr>";
+                    }
+                }else{
+                    html += "<tr><td>当前没有文件上传</td></tr>";
+                }
+                $("#fileArea").html(html);
+            },
+            dataType:"json"
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package com.chanchifeng.localmachine.model.login.model;
+package com.chanchifeng.localmachine.model.user.model;
 
 
 import org.springframework.format.annotation.DateTimeFormat;

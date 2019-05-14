@@ -1,8 +1,8 @@
-package com.chanchifeng.localmachine.model.login.handler;
+package com.chanchifeng.localmachine.model.user.handler;
 
-import com.chanchifeng.localmachine.model.login.dao.DepartmentDao;
-import com.chanchifeng.localmachine.model.login.dao.UserDao;
-import com.chanchifeng.localmachine.model.login.model.User;
+import com.chanchifeng.localmachine.model.user.dao.DepartmentDao;
+import com.chanchifeng.localmachine.model.user.dao.UserDao;
+import com.chanchifeng.localmachine.model.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.Errors;
 import org.springframework.validation.FieldError;

@@ -1,7 +1,7 @@
-package com.chanchifeng.localmachine.model.login.dao;
+package com.chanchifeng.localmachine.model.user.dao;
 
-import com.chanchifeng.localmachine.model.login.model.Department;
-import com.chanchifeng.localmachine.model.login.model.User;
+import com.chanchifeng.localmachine.model.user.model.Department;
+import com.chanchifeng.localmachine.model.user.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -29,13 +29,13 @@ public class UserDao {
 
     private static Integer initId = 1006;
 
-    public void save(User User){
-        if(User.getId() == null){
-            User.setId(initId++);
+    public void save(User user){
+        if(user.getId() == null){
+            user.setId(initId++);
         }
 
-        User.setDepartment(departmentDao.getDepartment(User.getDepartment().getId()));
-        Users.put(User.getId(), User);
+        user.setDepartment(departmentDao.getDepartment(user.getDepartment().getId()));
+        Users.put(user.getId(), user);
     }
 
     public Collection<User> getAll(){
