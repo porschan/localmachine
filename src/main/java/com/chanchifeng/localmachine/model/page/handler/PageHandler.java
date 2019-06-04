@@ -32,4 +32,10 @@ public class PageHandler {
         modelAndView.addObject("message",param);
         return modelAndView;
     }
+
+    @GetMapping("/page/socketPage")
+    public ModelAndView socketPage() {
+        ModelAndView modelAndView = new ModelAndView("socket");
+        return modelAndView;
+    }
 }
